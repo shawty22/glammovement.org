@@ -4,9 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="GLAM — Global Local AI Mobilization. A friendly, non-profit movement for AI that's powerful, private, and fairly governed — for everyone, everywhere.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 <meta property="og:title" content="GLAM — Global Local AI Mobilization">
 <meta property="og:description" content="Power. Privacy. Policy. Join the movement for AI that works for everyone, everywhere.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://glammovement.org/">
+<meta property="og:image" content="https://glammovement.org/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GLAM — Global Local AI Mobilization">
+<meta name="twitter:description" content="Power. Privacy. Policy. Join the movement for AI that works for everyone, everywhere.">
+<meta name="twitter:image" content="https://glammovement.org/assets/og-image.jpg">
 <title>GLAM — Global Local AI Mobilization</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +42,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2.5rem;displ
 .nav-links a:hover{color:var(--green)}
 .nav-cta{font-family:'DM Mono',monospace;font-size:11px;padding:8px 20px;border:1px solid var(--green);color:var(--green);border-radius:2px;text-decoration:none;letter-spacing:0.08em;transition:all 0.2s;white-space:nowrap}
 .nav-cta:hover{background:var(--green);color:var(--bg)}
-@media(max-width:900px){.nav-links{display:none}}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0}
+.nav-toggle span{display:block;width:100%;height:2px;background:var(--green);transition:transform 0.2s,opacity 0.2s}
+nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+nav.open .nav-toggle span:nth-child(2){opacity:0}
+nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:900px){
+  .nav-links{display:flex;flex-direction:column;gap:0;position:fixed;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);max-height:0;overflow:hidden;transition:max-height 0.25s ease}
+  .nav-links a{padding:14px 2.5rem;border-top:1px solid var(--border2)}
+  nav.open .nav-links{max-height:400px}
+  .nav-toggle{display:flex}
+}
 
 section{position:relative;z-index:1;padding:6rem 2.5rem;max-width:1200px;margin:0 auto}
 
@@ -125,7 +145,7 @@ footer{padding:2.5rem;border-top:1px solid var(--border2);display:flex;justify-c
 </head>
 <body>
 
-<nav>
+<nav id="site-nav">
   <a href="#top" class="nav-logo">GLAM</a>
   <div class="nav-right">
     <div class="nav-links">
@@ -138,6 +158,9 @@ footer{padding:2.5rem;border-top:1px solid var(--border2);display:flex;justify-c
       <a href="#contact">Contact</a>
     </div>
     <a href="#contact" class="nav-cta">Let's Mobilize!</a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="document.getElementById('site-nav').classList.toggle('open'); this.setAttribute('aria-expanded', document.getElementById('site-nav').classList.contains('open'))">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -500,6 +523,16 @@ footer{padding:2.5rem;border-top:1px solid var(--border2);display:flex;justify-c
   <span class="footer-logo">GLAM</span>
   <span class="footer-tag">Global Local AI Mobilization · Non-profit · Non-partisan</span>
 </footer>
+
+<script>
+document.querySelectorAll('.nav-links a').forEach(function(link){
+  link.addEventListener('click', function(){
+    var nav = document.getElementById('site-nav');
+    nav.classList.remove('open');
+    nav.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
 
 </body>
 </html>
