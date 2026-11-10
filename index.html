@@ -1,538 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="GLAM — Global Local AI Mobilization. A friendly, non-profit movement for AI that's powerful, private, and fairly governed — for everyone, everywhere.">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<meta property="og:title" content="GLAM — Global Local AI Mobilization">
-<meta property="og:description" content="Power. Privacy. Policy. Join the movement for AI that works for everyone, everywhere.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://glammovement.org/">
-<meta property="og:image" content="https://glammovement.org/assets/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GLAM — Global Local AI Mobilization">
-<meta name="twitter:description" content="Power. Privacy. Policy. Join the movement for AI that works for everyone, everywhere.">
-<meta name="twitter:image" content="https://glammovement.org/assets/og-image.jpg">
-<title>GLAM — Global Local AI Mobilization</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#060a07;--bg2:#0c120d;--bg3:#121a13;--surface:#192119;--surface2:#223026;
-  --green:#3ddc84;--green2:#2ab86a;--green-dim:rgba(61,220,132,0.1);
-  --teal:#5dd8c0;--amber:#f0c060;--red:#e05c5c;
-  --text:#e6ede8;--text2:#7a9e80;--text3:#2e5234;
-  --border:rgba(61,220,132,0.1);--border2:rgba(61,220,132,0.05);
-}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.02;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(6,10,7,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border2)}
-.nav-logo{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--green);text-decoration:none;letter-spacing:0.06em}
-.nav-right{display:flex;align-items:center;gap:2rem}
-.nav-links{display:flex;gap:1.75rem}
-.nav-links a{font-family:'DM Mono',monospace;font-size:10px;color:var(--text2);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
-.nav-links a:hover{color:var(--green)}
-.nav-cta{font-family:'DM Mono',monospace;font-size:11px;padding:8px 20px;border:1px solid var(--green);color:var(--green);border-radius:2px;text-decoration:none;letter-spacing:0.08em;transition:all 0.2s;white-space:nowrap}
-.nav-cta:hover{background:var(--green);color:var(--bg)}
-.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:32px;height:32px;background:none;border:none;cursor:pointer;padding:0}
-.nav-toggle span{display:block;width:100%;height:2px;background:var(--green);transition:transform 0.2s,opacity 0.2s}
-nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-nav.open .nav-toggle span:nth-child(2){opacity:0}
-nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-@media(max-width:900px){
-  .nav-links{display:flex;flex-direction:column;gap:0;position:fixed;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);max-height:0;overflow:hidden;transition:max-height 0.25s ease}
-  .nav-links a{padding:14px 2.5rem;border-top:1px solid var(--border2)}
-  nav.open .nav-links{max-height:400px}
-  .nav-toggle{display:flex}
-}
-
-section{position:relative;z-index:1;padding:6rem 2.5rem;max-width:1200px;margin:0 auto}
-
-/* HERO */
-.hero{min-height:92vh;display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;gap:3rem;padding-top:8rem}
-.hero-eyebrow{font-family:'DM Mono',monospace;font-size:11px;color:var(--green);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2rem}
-.hero-title{font-family:'Fraunces',serif;font-size:clamp(2.2rem,5.5vw,4.4rem);font-weight:900;line-height:1.02;letter-spacing:-0.02em;margin-bottom:1.75rem}
-.hero-title .l2{display:block;color:var(--text)}
-.hero-title .l3{display:block;color:var(--green)}
-.hero-sub{font-size:clamp(1rem,1.6vw,1.15rem);color:var(--text2);max-width:520px;line-height:1.85;margin-bottom:2.5rem}
-.hero-sub strong{color:var(--text);font-weight:400}
-.hero-badge{margin-top:1.75rem;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.02em;color:var(--text2);opacity:0.75}
-.hero-badge strong{color:var(--text2);font-weight:500}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-primary{font-family:'DM Mono',monospace;font-size:13px;padding:16px 36px;background:var(--green);color:var(--bg);border:none;border-radius:2px;cursor:pointer;letter-spacing:0.08em;font-weight:500;transition:all 0.2s;text-decoration:none;display:inline-block}
-.btn-primary:hover{background:#5aefa0;transform:translateY(-2px)}
-.btn-secondary{font-family:'DM Mono',monospace;font-size:13px;padding:16px 36px;background:transparent;color:var(--text2);border:1px solid var(--border);border-radius:2px;cursor:pointer;letter-spacing:0.08em;transition:all 0.2s;text-decoration:none;display:inline-block}
-.btn-secondary:hover{border-color:var(--green);color:var(--green)}
-.hero-earth-wrap{display:flex;align-items:center;justify-content:center}
-.hero-earth{width:90%;max-width:480px;aspect-ratio:1;border-radius:50%;object-fit:cover;display:block;box-shadow:0 40px 80px -20px rgba(0,0,0,0.6)}
-@media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center;min-height:auto}.hero-sub{margin-left:auto;margin-right:auto}.hero-actions{justify-content:center}.hero-earth-wrap{order:-1;margin-bottom:1rem}.hero-earth{width:60%;max-width:280px}}
-
-/* SECTION HEADS */
-.sec-eyebrow{font-family:'DM Mono',monospace;font-size:11px;color:var(--green);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1.25rem;display:block}
-h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.7rem,3.2vw,2.6rem);line-height:1.15;letter-spacing:-0.01em;margin-bottom:1.25rem;max-width:18ch}
-.sec-lede{color:var(--text2);max-width:640px;font-size:1.02rem;line-height:1.85}
-
-/* WHY GLOBAL LOCAL */
-.why{border-top:1px solid var(--border2)}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem;align-items:start}
-.why-card{background:var(--bg2);border:1px solid var(--border2);border-radius:6px;padding:2rem}
-.why-card h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:var(--green);margin-bottom:0.75rem}
-.why-card p{color:var(--text2);font-size:0.95rem;line-height:1.75}
-.why-grid-3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:800px){.why-grid{grid-template-columns:1fr}}
-
-/* CORE PHILOSOPHY */
-.philosophy{border-top:1px solid var(--border2)}
-.phil-grid{display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:2rem}
-.phil-item{font-family:'DM Mono',monospace;font-size:12.5px;color:var(--text);background:var(--bg2);border:1px solid var(--border2);border-radius:999px;padding:10px 18px;letter-spacing:0.01em}
-.phil-tagline{margin-top:2.25rem;font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.15rem,2.2vw,1.5rem);color:var(--text2);letter-spacing:-0.005em}
-.phil-tagline span{color:var(--green)}
-
-/* GLAF CALLOUT */
-.glaf-callout{border-top:1px solid var(--border2);padding:0 2.5rem}
-.glaf-box{max-width:1200px;margin:0 auto;background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--border);border-radius:10px;padding:3.5rem;text-align:center}
-.glaf-box .sec-eyebrow{justify-content:center}
-.glaf-box h2{margin-left:auto;margin-right:auto}
-.glaf-box .sec-lede{margin-left:auto;margin-right:auto}
-.glaf-box,.glaf-box *{text-align:center}
-
-/* PILLARS */
-.pillars{border-top:1px solid var(--border2)}
-.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border2);border:1px solid var(--border2);margin-top:2.5rem}
-.pillar{background:var(--bg2);padding:2.75rem 2.25rem;scroll-margin-top:6rem}
-.pillar-icon{font-size:2rem;margin-bottom:1.25rem;display:block}
-.pillar h3{font-family:'Fraunces',serif;font-weight:700;font-size:1.35rem;margin-bottom:0.4rem;color:var(--text)}
-.pillar-sub{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--green);margin-bottom:1rem}
-.pillar p{color:var(--text2);font-size:0.95rem;line-height:1.8;margin-bottom:1.25rem}
-.pillar ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
-.pillar li{font-size:0.88rem;color:var(--text2);padding-left:1.1rem;position:relative}
-.pillar li::before{content:'→';position:absolute;left:0;color:var(--green)}
-@media(max-width:800px){.pillars-grid{grid-template-columns:1fr}}
-
-/* RESOURCES */
-.resources{border-top:1px solid var(--border2)}
-.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
-.res-card{background:var(--bg2);border:1px solid var(--border2);border-radius:6px;padding:1.75rem;display:flex;flex-direction:column;gap:0.9rem;transition:border-color 0.2s,transform 0.2s}
-.res-card:hover{border-color:var(--border);transform:translateY(-2px)}
-.res-icon{width:36px;height:36px;border-radius:6px;object-fit:contain;background:var(--surface);padding:6px}
-.res-card h4{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:var(--text)}
-.res-card p{color:var(--text2);font-size:0.86rem;line-height:1.65;flex:1}
-.res-link{font-family:'DM Mono',monospace;font-size:11px;color:var(--green);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:0.4rem}
-.res-link:hover{text-decoration:underline}
-@media(max-width:900px){.res-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.res-grid{grid-template-columns:1fr}}
-
-/* ABOUT / CONTACT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem}
-.about-grid p{color:var(--text2);font-size:0.98rem;line-height:1.85;margin-bottom:1rem}
-@media(max-width:800px){.about-grid{grid-template-columns:1fr}}
-.contact-box{background:var(--bg2);border:1px solid var(--border2);border-radius:6px;padding:2.5rem;margin-top:2.5rem;max-width:520px}
-.contact-box a{color:var(--green);text-decoration:none;font-family:'DM Mono',monospace}
-.contact-box a:hover{text-decoration:underline}
-
-footer{padding:2.5rem;border-top:1px solid var(--border2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;max-width:1200px;margin:0 auto}
-.footer-logo{font-family:'Fraunces',serif;font-weight:700;color:var(--green)}
-.footer-tag{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--text3);letter-spacing:0.04em}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GLAM — AI we can use. AI we can control.</title>
+  <meta name="description" content="GLAM is a movement for shared, private AI that runs closer to home. Protect our planet, keep people in control and share what works worldwide.">
+  <link rel="canonical" href="https://glammovement.org/">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GLAM — AI we can use. AI we can control.">
+  <meta property="og:description" content="Planet. Privacy. People. Build shared AI close to home and share what works worldwide.">
+  <meta property="og:url" content="https://glammovement.org/">
+  <meta property="og:image" content="https://glammovement.org/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GLAM — AI we can use. AI we can control.">
+  <meta name="twitter:description" content="Planet. Privacy. People. Build shared AI close to home and share what works worldwide.">
+  <meta name="twitter:image" content="https://glammovement.org/assets/og-image.jpg">
+  <style>
+    :root{color-scheme:dark;--night:#0c1410;--panel:#142019;--line:#374e3d;--ink:#f7f4e9;--muted:#c0cfc2;--mint:#aef39e;--gold:#f7d395;--serif:Georgia,serif;--sans:system-ui,sans-serif;--mono:ui-monospace,monospace}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--night);color:var(--ink);font:1rem/1.65 var(--sans)}
+    h1,h2,h3,h4,p{margin:0}
+    h1,h2,h3,h4{font-family:var(--serif);font-weight:normal;line-height:1.06;text-wrap:balance}
+    a{color:var(--mint);text-underline-offset:.22em}
+    a:hover{color:var(--ink)}
+    a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+    .wrap{width:min(100% - 3rem, 72rem);margin-inline:auto}
+    .skip{position:absolute;top:.5rem;left:.75rem;transform:translateY(-150%);background:var(--night);padding:.5rem;z-index:2}
+    .skip:focus{transform:none}
+    .mast{border-bottom:1px solid var(--line)}
+    .mast .wrap,footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-block:1rem}
+    .brand{font:bold 1.6rem var(--serif);color:var(--mint);text-decoration:none}
+    nav{display:flex;align-items:center;gap:clamp(.75rem,3vw,2rem);flex-wrap:wrap}
+    nav a{font-size:.88rem;text-decoration:none;color:var(--muted)}
+    .eyebrow,.number,.label{font:600 .75rem/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mint)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:clamp(1rem,5vw,5rem);padding-block:clamp(3rem,9vw,8rem)}
+    h1{font-size:clamp(2.7rem,6.3vw,6rem);letter-spacing:-.055em;margin-block:1rem 1.4rem}
+    h1 span{display:block;color:var(--mint)}
+    .lede{font-size:clamp(1.05rem,2vw,1.25rem);max-width:37rem;color:var(--muted)}
+    .hero img{display:block;width:100%;max-width:30rem;margin:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 4rem #aef39e19}
+    .actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.35rem;margin-top:1.65rem}
+    .button{display:inline-block;padding:.7rem 1.05rem;border:1px solid var(--mint);border-radius:.3rem;background:var(--mint);color:var(--night);font-weight:700;text-decoration:none}
+    .button:hover{background:var(--ink);color:var(--night)}
+    .pillars{border-block:1px solid var(--line);background:var(--panel)}
+    .three{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .pillars .three{padding-block:1.5rem}
+    .pillars a{display:block;text-decoration:none}
+    .pillars strong{font:normal 1.5rem var(--serif)}
+    .pillars span{display:block;color:var(--muted);font-size:.9rem}
+    .section{padding-block:clamp(3rem,7vw,5.5rem);border-bottom:1px solid var(--line)}
+    h2{font-size:clamp(2.15rem,5vw,4rem);letter-spacing:-.035em;margin-block:.55rem 1rem}
+    h3,.point h4{font-size:clamp(1.4rem,2.6vw,2rem);margin-bottom:.45rem}
+    .steps,.roles{margin-top:1.65rem}
+    .steps article,.roles article{border-top:1px solid var(--line);padding-top:1rem}
+    .steps p,.roles p,.note,.evidence p{color:var(--muted)}
+    .manifesto{background:#101a13}
+    .group{margin-top:2.5rem;scroll-margin-top:1rem}
+    .group-heading{color:var(--mint);font-size:1.5rem;margin-bottom:.75rem}
+    .point{display:grid;grid-template-columns:2.6rem minmax(0,1fr);gap:.6rem;padding:1.25rem 0;border-top:1px solid var(--line)}
+    .point .number{padding-top:.25rem;color:var(--gold)}
+    .point p{max-width:49rem}
+    .evidence ol,.directory{padding-left:1.5rem}
+    .directory{columns:2}
+    .directory li{break-inside:avoid}
+    .evidence details{max-width:56rem;margin-top:1rem}
+    .evidence summary{cursor:pointer;color:var(--mint);font-weight:700;padding:.3rem 0}
+    .evidence li{margin-block:1rem;padding-left:.35rem}
+    .sources{display:flex;flex-wrap:wrap;gap:.3rem 1rem;margin-top:.35rem;font-size:.92rem}
+    footer{color:var(--muted);font-size:.85rem}
+    @media(max-width:720px){
+      .wrap{width:calc(100% - 2rem)}
+      .hero,.three{grid-template-columns:1fr}
+      .hero img{max-width:16rem}
+      .hero{gap:2rem}
+      .pillars .three{gap:.75rem}
+      .pillars a{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+      .point{grid-template-columns:1.8rem minmax(0,1fr)}
+      .directory{columns:1}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
 </head>
-<body>
-
-<nav id="site-nav">
-  <a href="#top" class="nav-logo">GLAM</a>
-  <div class="nav-right">
-    <div class="nav-links">
-      <a href="#top">Home</a>
-      <a href="#power">Power</a>
-      <a href="#privacy">Privacy</a>
-      <a href="#policy">Policy</a>
-      <a href="#resources">Resources</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="mast">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="GLAM home">GLAM</a>
+      <nav aria-label="Main navigation">
+        <a href="#why">How it works</a>
+        <a href="#glamifesto">GLAMifesto</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Get involved</a>
+      </nav>
     </div>
-    <a href="#contact" class="nav-cta">Let's Mobilize!</a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="document.getElementById('site-nav').classList.toggle('open'); this.setAttribute('aria-expanded', document.getElementById('site-nav').classList.contains('open'))">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+  </header>
 
-<section class="hero" id="top">
-  <div>
-    <span class="hero-eyebrow">Global Local AI Mobilization</span>
-    <h1 class="hero-title">
-      <span class="l2">The future of AI</span>
-      <span class="l3">is a choice.</span>
-    </h1>
-    <p class="hero-sub">
-      Helping people understand how <strong>Power, Privacy and Policy</strong>
-      will shape the next generation of artificial intelligence.
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Let's Mobilize!</a>
-      <a href="#why" class="btn-secondary">Why Global Local?</a>
-    </div>
-    <p class="hero-badge">
-      An initiative of the <strong>Global Local AI Foundation</strong> —
-      registered U.S. 501(c)(3) nonprofit
-    </p>
-  </div>
-  <div class="hero-earth-wrap">
-    <img class="hero-earth" src="assets/earth.jpg" alt="The Earth, photographed from Apollo 17 (the Blue Marble)">
-  </div>
-</section>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Global Local AI Mobilization</p>
+        <h1 id="hero-title">AI we can use. <span>AI we can control.</span></h1>
+        <p class="lede">AI can help us create, learn and solve problems. Let’s make it easier to use close to home. Share the machines, keep private work private, and give communities a say in what runs and who pays.</p>
+        <div class="actions">
+          <a class="button" href="#glamifesto">Read the GLAMifesto</a>
+          <a href="#contact">Get involved</a>
+        </div>
+      </div>
+      <img src="assets/earth.jpg" alt="The Blue Marble photograph of Earth taken by the Apollo 17 crew">
+    </section>
 
-<section class="why" id="why">
-  <span class="sec-eyebrow">The Idea</span>
-  <h2>Why "Global Local"?</h2>
-  <p class="sec-lede">
-    The name holds three ideas together — and understanding all three is
-    the fastest way to understand what GLAM is for.
-  </p>
-  <div class="why-grid why-grid-3">
-    <div class="why-card">
-      <h3>Global</h3>
-      <p>
-        AI research and innovation happen everywhere, all at once. Knowledge
-        about how to build it safely and well should be shared just as
-        widely.
-      </p>
-    </div>
-    <div class="why-card">
-      <h3>Local</h3>
-      <p>
-        Most people assume AI only exists in the cloud — and today, that's
-        often true for the most powerful experiences. But that's changing
-        fast: capable AI increasingly runs on phones, laptops and other
-        local devices, with hybrid approaches emerging too. GLAM helps
-        people understand when cloud, local and hybrid AI each make sense,
-        today and as things evolve.
-      </p>
-    </div>
-    <div class="why-card">
-      <h3>Mobilization</h3>
-      <p>
-        Education. Participation. Public engagement. Helping people
-        understand AI well enough to have a real say in shaping its future.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="pillars" id="power-privacy-policy">
-  <span class="sec-eyebrow">What We're Building</span>
-  <h2>Power. Privacy. Policy.</h2>
-  <p class="sec-lede">Three simple pillars guide everything GLAM does.</p>
-  <div class="pillars-grid">
-    <div class="pillar" id="power">
-      <span class="pillar-icon">⚡</span>
-      <h3>Power</h3>
-      <p class="pillar-sub">Energy &amp; Efficient Computing</p>
-      <p>
-        Here, "Power" means electricity — not politics or corporate size. AI
-        requires real electricity, computing resources and, often,
-        significant water for cooling. Not every AI workload needs to run
-        inside a hyperscale data centre — local, edge and hybrid AI can
-        often perform tasks closer to where people live and work, reducing
-        unnecessary infrastructure, latency and data movement. Power is
-        about using compute wisely.
-      </p>
-      <ul>
-        <li>Reduce unnecessary electricity, water and computing use</li>
-        <li>Not every task needs a data centre</li>
-        <li>Efficiency is a design choice, not an accident</li>
-      </ul>
-    </div>
-    <div class="pillar" id="privacy">
-      <span class="pillar-icon">🔒</span>
-      <h3>Privacy</h3>
-      <p class="pillar-sub">Choice, Trust &amp; Control</p>
-      <p>
-        AI doesn't always need to send personal information to the cloud.
-        Local AI, on-device AI and hybrid AI are still maturing, but
-        they're quickly becoming real options — and GLAM's goal is a future
-        where that real choice exists for everyone, not just a few.
-      </p>
-      <ul>
-        <li>Some tasks are fine in the cloud today</li>
-        <li>Others are increasingly better handled on your own device</li>
-        <li>The choice should eventually be yours to make</li>
-      </ul>
-    </div>
-    <div class="pillar" id="policy">
-      <span class="pillar-icon">🏛</span>
-      <h3>Policy</h3>
-      <p class="pillar-sub">Sensible, Neutral Governance</p>
-      <p>
-        Promoting transparency, open standards, healthy competition,
-        consumer protections, and responsible innovation — GLAM stays
-        politically neutral on how, not whether, AI should be governed well.
-      </p>
-      <ul>
-        <li>Clear standards over guesswork</li>
-        <li>Healthy competition, not gatekeeping</li>
-        <li>Accountability that earns public trust</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="philosophy" id="philosophy">
-  <span class="sec-eyebrow">Core Philosophy</span>
-  <h2>A new way to think about AI.</h2>
-  <p class="sec-lede">
-    Artificial intelligence is becoming part of everyday life. Today, most
-    AI experiences rely on large cloud infrastructure — and in many cases,
-    that's exactly the right choice. But AI is evolving rapidly. Powerful
-    AI is increasingly running on phones, laptops, personal computers,
-    vehicles and other local devices, and hybrid approaches are emerging
-    that combine local intelligence with cloud services. GLAM believes the
-    future isn't about replacing one approach with another. It's about
-    helping people understand the choices, encouraging thoughtful
-    innovation, and building technologies that are more private, resilient
-    and energy-efficient where appropriate. Our movement is about being
-    intentional.
-  </p>
-  <div class="phil-grid">
-    <span class="phil-item">Some AI belongs in hyperscale cloud infrastructure.</span>
-    <span class="phil-item">Some belongs on personal devices.</span>
-    <span class="phil-item">Some belongs inside hospitals.</span>
-    <span class="phil-item">Some belongs inside schools.</span>
-    <span class="phil-item">Some belongs inside businesses.</span>
-    <span class="phil-item">Some belongs inside communities.</span>
-  </div>
-  <p class="sec-lede" style="margin-top:1.75rem">
-    To be clear: local AI for everyone is not here yet. Today it's
-    mostly early adopters, developers and specific devices. GLAM exists to
-    help build toward a future where capable, private, local and hybrid AI
-    are real, practical options for everyone — not just those with the
-    resources to seek them out.
-  </p>
-  <p class="phil-tagline">
-    Use the right AI. <span>In the right place.</span> For the right reason.
-  </p>
-</section>
-
-<section class="glaf-callout">
-  <div class="glaf-box">
-    <span class="sec-eyebrow">Looking For The Research?</span>
-    <h2 style="max-width:none">GLAM introduces the ideas. GLAF publishes the evidence.</h2>
-    <p class="sec-lede">
-      The Global Local AI Foundation (GLAF) is the independent research
-      organization behind these ideas — publishing the studies, reports and
-      evidence that inform everything GLAM teaches.
-    </p>
-    <a href="https://globallocalai.org" class="btn-primary" style="margin-top:1.5rem;display:inline-block">Explore the Research →</a>
-  </div>
-</section>
-
-<section class="resources" id="resources">
-  <span class="sec-eyebrow">Resources</span>
-  <h2>Learn more from the people doing great work here.</h2>
-  <p class="sec-lede">
-    A curated set of documentaries, courses, and organizations we think are
-    worth your time. GLAM doesn't speak for them — we're just pointing you
-    their way.
-  </p>
-  <div class="res-grid">
-
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=focusfeatures.com" alt="">
-      <h4>The AI Doc</h4>
-      <p>A 2026 documentary following AI's promise and risk through the eyes of a filmmaker becoming a parent.</p>
-      <a class="res-link" href="https://www.focusfeatures.com/the-ai-doc-or-how-i-became-an-apocaloptimist" target="_blank" rel="noopener noreferrer">Visit Website →</a>
+    <div class="pillars">
+      <div class="wrap three">
+        <a href="#planet"><strong>Planet</strong><span>Protect water, land and electricity.</span></a>
+        <a href="#privacy"><strong>Privacy</strong><span>Keep sensitive work close.</span></a>
+        <a href="#people"><strong>People</strong><span>Share the machines and the decisions.</span></a>
+      </div>
     </div>
 
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=humanetech.com" alt="">
-      <h4>The AI Dilemma</h4>
-      <p>The widely-shared presentation from Tristan Harris and Aza Raskin on AI's risks and how to navigate them.</p>
-      <a class="res-link" href="https://www.humanetech.com/podcast/the-ai-dilemma" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
+    <section class="section wrap" id="why">
+      <p class="eyebrow">How global local AI works</p>
+      <h2>Run it close. Share what works.</h2>
+      <p class="lede">AI can run on your device or on a group of computers your community shares. That group is a local cluster. Communities can share tools and lessons worldwide while deciding for themselves where their work runs.</p>
+      <div class="three steps">
+        <article><h3>Start close to home.</h3><p>Use smaller models for everyday work, like editing a letter or organizing notes. Pool the hardware so access doesn’t depend on buying a powerful machine.</p></article>
+        <article><h3>Reuse good work.</h3><p>When neighbors ask the same public question, keep a checked answer and its source nearby. Refresh it when the facts change. Keep personal requests separate.</p></article>
+        <article><h3>Bring in the cloud when it helps.</h3><p>Use a larger outside model when the job needs it and the data can go there. Keep basic services available when the connection goes down.</p></article>
+      </div>
+    </section>
 
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=humanetech.com" alt="">
-      <h4>Center for Humane Technology</h4>
-      <p>A nonprofit working to align technology with humanity's best interests, not its worst impulses.</p>
-      <a class="res-link" href="https://www.humanetech.com" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
+    <section class="section manifesto" id="glamifesto">
+      <div id="power-privacy-policy" aria-hidden="true"></div>
+      <div class="wrap">
+        <p class="eyebrow">Ten actions for the movement</p>
+        <h2>The GLAMifesto</h2>
+        <p class="lede">Let’s build useful AI that our communities can afford, inspect and run. Here’s what we’ll organize around.</p>
 
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=elementsofai.com" alt="">
-      <h4>Elements of AI</h4>
-      <p>A free, friendly introduction to AI — no coding or math background required.</p>
-      <a class="res-link" href="https://www.elementsofai.com" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
+        <section class="group" id="planet" aria-labelledby="planet-title">
+          <h3 class="group-heading" id="planet-title">Planet</h3>
+          <article class="point" id="power"><span class="number">01</span><div><h4>Protect our water, land and electric bills.</h4><p>Try running routine AI on shared machines in buildings we already have. Before a big data center gets a permit or a tax break, make its owners show how much water, land and electricity it needs and who pays for the upgrades. Set limits communities can enforce.</p></div></article>
+          <article class="point"><span class="number">02</span><div><h4>Let the neighbors sleep.</h4><p>Choose local equipment quiet enough to live beside. Measure fans, cooling equipment and backup generators where people actually live, including at night. Set enforceable limits and give neighbors a named operator to call.</p></div></article>
+          <article class="point"><span class="number">03</span><div><h4>Build jobs that stay.</h4><p>Pay people to operate, repair and teach others to use local AI. Before handing out public subsidies, count temporary construction and lasting local jobs separately. Put wages and hiring commitments in writing.</p></div></article>
+          <article class="point"><span class="number">04</span><div><h4>Use the AI we already have.</h4><p>Try smaller local models for everyday work like cleaning up an email or drafting a checklist. Move up to a bigger model when it makes a difference. Count useful work finished and resources used.</p></div></article>
+        </section>
 
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=coursera.org" alt="">
-      <h4>AI for Everyone</h4>
-      <p>Andrew Ng's plain-language course on what AI can and can't do, built for non-technical learners.</p>
-      <a class="res-link" href="https://www.coursera.org/learn/ai-for-everyone" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
+        <section class="group" id="privacy" aria-labelledby="privacy-title">
+          <h3 class="group-heading" id="privacy-title">Privacy</h3>
+          <article class="point"><span class="number">05</span><div><h4>Keep private life private.</h4><p>Keep sensitive work on devices or local systems people trust. Keep private requests out of shared caches. Show people what would leave their system, ask first, and let them see and delete what’s kept.</p></div></article>
+          <article class="point" id="policy"><span class="number">06</span><div><h4>Give us a say and a switch.</h4><p>Give people a human way to get help and appeal an AI-assisted decision. Give operators an independent way to pause the AI or cut its cloud connection. Our water, electricity and other essential services should still be operable when that connection is cut.</p></div></article>
+          <article class="point"><span class="number">07</span><div><h4>Our knowledge, our rules.</h4><p>Tribal nations decide how their data and knowledge can be used. Other communities and rights holders should set the terms for material they steward. Build local systems that honor permission, limits on reuse and decisions to withdraw access.</p></div></article>
+        </section>
 
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=eff.org" alt="">
-      <h4>Electronic Frontier Foundation</h4>
-      <p>The leading nonprofit defending civil liberties online, including privacy in the age of AI.</p>
-      <a class="res-link" href="https://www.eff.org" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
+        <section class="group" id="people" aria-labelledby="people-title">
+          <h3 class="group-heading" id="people-title">People</h3>
+          <article class="point"><span class="number">08</span><div><h4>Pool the machines. Share the keys.</h4><p>Start shared clusters with neighborhood groups, cooperatives and community institutions. Use the hardware that makes sense, including Apple, NVIDIA and other options. Give people a vote on access, spending and who operates the service.</p></div></article>
+          <article class="point"><span class="number">09</span><div><h4>Do the work once. Share what we learn.</h4><p>If fifty neighbors ask when the town picks up bulky waste, keep the official source and a checked answer nearby. Do the same for public research we have permission to share. Update or retire saved answers when the facts change.</p></div></article>
+          <article class="point"><span class="number">10</span><div><h4>Open the code. Show the receipts.</h4><p>Build with open-source software people can inspect, repair and adapt. Publish the models and licenses, when the system calls the cloud, what it costs, and how it performs. Teach others to run it so the next community can start further ahead.</p></div></article>
+        </section>
+      </div>
+    </section>
 
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=foundation.mozilla.org" alt="">
-      <h4>Mozilla Foundation</h4>
-      <p>Working to keep the internet — and the AI increasingly built into it — open and healthy.</p>
-      <a class="res-link" href="https://foundation.mozilla.org" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
+    <section class="section wrap evidence" id="research">
+      <p class="eyebrow">Research behind the movement</p>
+      <h2>Put the claims to the test.</h2>
+      <p class="lede">The Global Local AI Foundation (GLAF) is the research side. Its agenda includes testing which everyday tasks can stay local, what repeat work can be avoided, and whether a local cluster can help operators respond to rogue AI agents while essential services stay under human control.</p>
+      <div class="actions"><a class="button" href="https://globallocalai.org/">Explore GLAF research</a></div>
+      <details id="resources">
+        <summary>Read the research and proposed tests for all ten points</summary>
+        <ol>
+          <li><strong>Water, land and electricity.</strong> Compare electricity per completed task, peak load, cooling water and the space needed to deliver comparable services. Count the cluster’s idle draw.
+            <div class="sources"><a href="https://bies.lbl.gov/publications/2024-lbnl-data-center-energy-usage-report">Berkeley Lab energy and water report</a><a href="https://jlarc.virginia.gov/landing-2024-data-centers-in-virginia.asp">Virginia legislative audit</a></div></li>
+          <li><strong>Noise.</strong> Measure normal and peak loads at occupied spaces, including low-frequency sound and nighttime conditions.
+            <div class="sources"><a href="https://jlarc.virginia.gov/landing-2024-data-centers-in-virginia.asp">Virginia audit on siting and noise</a></div></li>
+          <li><strong>Lasting jobs.</strong> Track paid operating and training hours and how much of a node’s spending stays local.
+            <div class="sources"><a href="https://jlarc.virginia.gov/landing-2024-data-centers-in-virginia.asp">Virginia audit on employment</a><a href="https://git.inference.coop/co-op/docs/src/branch/main/background.md">Inference Cooperative’s operating model</a></div></li>
+          <li><strong>Everyday use.</strong> Compare local and cloud results on writing tasks. Measure accepted answers, retries and energy per accepted result.
+            <div class="sources"><a href="https://www.nber.org/system/files/working_papers/w34255/w34255.pdf">How People Use ChatGPT</a><a href="https://arxiv.org/abs/2406.18665">RouteLLM routing research</a></div></li>
+          <li><strong>Privacy.</strong> Test what leaves the system, what other users can see, and what remains after deletion.
+            <div class="sources"><a href="https://arxiv.org/abs/2403.02694">MeanCache research</a><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI Risk Management Framework</a></div></li>
+          <li><strong>Human control and continuity.</strong> Use GLAF’s existing cluster in an isolated simulation to test local AI as a read-only incident assistant after the cloud link is cut. Compare how quickly operators diagnose the incident and keep the simulated service safe. Keep equipment controls and shutdown independent of the model.
+            <div class="sources"><a href="https://huggingface.co/blog/agent-intrusion-technical-timeline">Hugging Face’s incident and on-premises investigation</a><a href="https://csrc.nist.gov/pubs/sp/800/82/r3/final">NIST operational technology security guide</a><a href="https://www.nlr.gov/security-resilience/cyber-range">ARIES Cyber Range</a></div></li>
+          <li><strong>Data sovereignty.</strong> Work with participating rights holders to test whether their rules hold when data is retrieved, reused, exported or deleted.
+            <div class="sources"><a href="https://localcontexts.org/labels/traditional-knowledge-labels/">Local Contexts Traditional Knowledge Labels</a><a href="https://fnigc.ca/ocap-training/">First Nations’ OCAP® principles</a></div></li>
+          <li><strong>Shared access.</strong> Compare hardware and track cost per user, wait times, accessibility and who can actually use the service.
+            <div class="sources"><a href="https://mlcommons.org/benchmarks/client/">MLCommons client benchmark</a><a href="https://git.inference.coop/co-op/docs/src/branch/main/background.md">Inference Cooperative’s member model</a></div></li>
+          <li><strong>Reuse.</strong> Compare exact matches, matches by meaning and reuse of source documents. Count correct hits, stale answers and cloud calls avoided.
+            <div class="sources"><a href="https://aclanthology.org/2023.nlposs-1.24/">GPTCache</a><a href="https://machinelearning.apple.com/research/semantic-caching">Apple’s verified caching research</a></div></li>
+          <li><strong>Open evidence.</strong> Publish settings, public test tasks and results. Ask another community to repeat the comparison using different hardware.
+            <div class="sources"><a href="https://opensource.org/ai/open-source-ai-definition">Open Source AI Definition</a><a href="https://aclanthology.org/2025.acl-long.1563/">Inference energy measurement research</a></div></li>
+        </ol>
+      </details>
+      <details>
+        <summary>Browse the GLAM reading and learning directory</summary>
+        <ul class="directory">
+          <li><a href="https://www.focusfeatures.com/the-ai-doc-or-how-i-became-an-apocaloptimist">The AI Doc</a></li>
+          <li><a href="https://www.humanetech.com/podcast/the-ai-dilemma">The AI Dilemma</a></li>
+          <li><a href="https://www.humanetech.com">Center for Humane Technology</a></li>
+          <li><a href="https://www.elementsofai.com">Elements of AI</a></li>
+          <li><a href="https://www.coursera.org/learn/ai-for-everyone">AI for Everyone</a></li>
+          <li><a href="https://www.eff.org">Electronic Frontier Foundation</a></li>
+          <li><a href="https://foundation.mozilla.org">Mozilla Foundation</a></li>
+          <li><a href="https://www.accessnow.org">Access Now</a></li>
+          <li><a href="https://hai.stanford.edu">Stanford HAI</a></li>
+          <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI Risk Management Framework</a></li>
+          <li><a href="https://oecd.ai">OECD AI Principles</a></li>
+          <li><a href="https://algorithmwatch.org">AlgorithmWatch</a></li>
+          <li><a href="https://www.ajl.org">Algorithmic Justice League</a></li>
+          <li><a href="https://pauseai.info">PauseAI</a></li>
+          <li><a href="https://pauseai-us.org">PauseAI US</a></li>
+          <li><a href="https://www.stopkillerrobots.org">Stop Killer Robots</a></li>
+          <li><a href="https://ainowinstitute.org">AI Now Institute</a></li>
+        </ul>
+      </details>
+    </section>
 
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=accessnow.org" alt="">
-      <h4>Access Now</h4>
-      <p>Defends the digital rights of people and communities at risk around the world.</p>
-      <a class="res-link" href="https://www.accessnow.org" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
+    <section class="section wrap" id="contact">
+      <p class="eyebrow">Get involved</p>
+      <h2>Pick one service. Build it together.</h2>
+      <p class="lede" id="about">GLAM is a founder-led community movement. Bring one thing your community wants AI to help with, or one way you can help build it.</p>
+      <div class="three roles">
+        <article><h3>Organize locally.</h3><p>Bring a neighborhood group, cooperative, school or community institution. Help set the rules and choose a first service.</p></article>
+        <article><h3>Build and test.</h3><p>Help run a node, lend hardware, teach neighbors or collaborate with GLAF on a research question.</p></article>
+        <article><h3>Bring your issue.</h3><p>Bring experience with water, land, noise, jobs, civil rights, privacy or data sovereignty. Help decide what a community should demand and measure.</p></article>
+      </div>
+      <div class="actions"><a class="button" href="mailto:contact@globallocalai.org?subject=Get%20involved%20with%20GLAM">Get in touch</a></div>
+    </section>
+  </main>
 
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=hai.stanford.edu" alt="">
-      <h4>Stanford HAI</h4>
-      <p>Stanford's institute studying AI's impact on society, and publisher of the annual AI Index.</p>
-      <a class="res-link" href="https://hai.stanford.edu" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
-
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=nist.gov" alt="">
-      <h4>NIST AI Risk Management Framework</h4>
-      <p>The U.S. government's practical framework for building and using trustworthy AI.</p>
-      <a class="res-link" href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
-
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=oecd.ai" alt="">
-      <h4>OECD AI Principles</h4>
-      <p>Global guidelines for AI that's innovative, trustworthy, and respects human rights.</p>
-      <a class="res-link" href="https://oecd.ai" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
-
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=algorithmwatch.org" alt="">
-      <h4>AlgorithmWatch</h4>
-      <p>A nonprofit tracking how automated decision-making affects people and society.</p>
-      <a class="res-link" href="https://algorithmwatch.org" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
-
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=ajl.org" alt="">
-      <h4>Algorithmic Justice League</h4>
-      <p>Fighting bias in AI systems and building a more equitable, accountable AI future.</p>
-      <a class="res-link" href="https://www.ajl.org" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
-
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=pauseai.info" alt="">
-      <h4>PauseAI</h4>
-      <p>A global volunteer movement advocating for a pause on the riskiest frontier AI development.</p>
-      <a class="res-link" href="https://pauseai.info" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
-
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=pauseai-us.org" alt="">
-      <h4>PauseAI US</h4>
-      <p>The U.S. chapter of PauseAI, organizing grassroots advocacy on AI safety policy.</p>
-      <a class="res-link" href="https://pauseai-us.org" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
-
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=stopkillerrobots.org" alt="">
-      <h4>Stop Killer Robots</h4>
-      <p>A global coalition campaigning against fully autonomous weapons.</p>
-      <a class="res-link" href="https://www.stopkillerrobots.org" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
-
-    <div class="res-card">
-      <img class="res-icon" src="https://www.google.com/s2/favicons?sz=64&domain=ainowinstitute.org" alt="">
-      <h4>AI Now Institute</h4>
-      <p>A research institute examining the social implications of AI, from power to accountability.</p>
-      <a class="res-link" href="https://ainowinstitute.org" target="_blank" rel="noopener noreferrer">Visit Website →</a>
-    </div>
-
-  </div>
-</section>
-
-<section class="about" id="about">
-  <span class="sec-eyebrow">About</span>
-  <h2>Who we are.</h2>
-  <div class="about-grid">
-    <div>
-      <p>
-        GLAM — Global Local AI Mobilization — is a public, non-partisan
-        movement powered by the Global Local AI Foundation, a U.S. registered
-        501(c)(3) nonprofit. We're not a tech company and we don't sell
-        anything. We're a community of people who think AI can be both
-        powerful and trustworthy, and who want to help make that happen.
-      </p>
-      <p>
-        We believe the future of AI shouldn't be decided by a handful of
-        companies alone. It should include everyone — technologists,
-        educators, parents, policymakers, and the communities AI already
-        touches every day.
-      </p>
-      <p>
-        At the heart of GLAM is a simple idea we call <strong style="color:var(--text)">Intentional AI</strong> —
-        choosing where AI runs and why, rather than defaulting to
-        hyperscale cloud infrastructure out of habit.
-      </p>
-    </div>
-    <div>
-      <p>
-        That's why we focus on three simple things: making AI powerful
-        enough to run locally, private enough to trust, and governed
-        sensibly enough to benefit everyone.
-      </p>
-      <p>
-        GLAM is an initiative of the Global Local AI Foundation (GLAF), which
-        conducts the independent research behind the movement. Learn more at
-        <a href="https://globallocalai.org" style="color:var(--green)">globallocalai.org</a>.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <span class="sec-eyebrow">Get Involved</span>
-  <h2>Join the movement.</h2>
-  <p class="sec-lede">
-    Whether you're a developer, an educator, or just someone who cares about
-    where AI is headed — there's a place for you here.
-  </p>
-  <div class="contact-box">
-    <p style="color:var(--text2);margin-bottom:1rem">
-      Say hello, ask a question, or find out how to get involved:
-    </p>
-    <a href="mailto:contact@globallocalai.org">contact@globallocalai.org</a>
-  </div>
-</section>
-
-<footer>
-  <span class="footer-logo">GLAM</span>
-  <span class="footer-tag">Global Local AI Mobilization · Non-profit · Non-partisan</span>
-</footer>
-
-<script>
-document.querySelectorAll('.nav-links a').forEach(function(link){
-  link.addEventListener('click', function(){
-    var nav = document.getElementById('site-nav');
-    nav.classList.remove('open');
-    nav.querySelector('.nav-toggle').setAttribute('aria-expanded', 'false');
-  });
-});
-</script>
-
+  <footer>
+    <div class="wrap"><a class="brand" href="#top">GLAM</a><span>Global Local AI Mobilization · Planet. Privacy. People.</span><a href="https://globallocalai.org/">Global Local AI Foundation</a></div>
+  </footer>
+  <script>
+    const researchSources = document.querySelector('#resources');
+    function revealSources() {
+      if (window.location.hash === '#resources') researchSources.open = true;
+    }
+    revealSources();
+    window.addEventListener('hashchange', revealSources);
+  </script>
 </body>
 </html>
