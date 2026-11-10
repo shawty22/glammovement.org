@@ -89,6 +89,7 @@
     .point p{max-width:52rem;color:var(--muted)}
     .point-research{margin-top:.95rem;padding:.7rem .85rem;border-left:2px solid var(--line);background:var(--raised)}
     .point-research p{font-size:.93rem}
+    .point-research .point-context{margin-top:.5rem}
     .point-research .label{font-size:.69rem;color:var(--green)}
     .point-research p.label{margin-bottom:.25rem}
     .point-research strong{color:var(--ink)}
@@ -210,11 +211,11 @@
       <div class="wrap">
         <p class="eyebrow">Ten actions for the Mobilization</p>
         <h2>The GLAMifesto</h2>
-        <p class="lede">Let’s build useful AI that our communities can afford, inspect and run. Each commitment includes a proposed test, sources and organizations doing related work.</p>
+        <p class="lede">We’re a technologist-led movement. We build tools with communities so more people can use AI, learn how it works and decide how it’s used. Each commitment includes a proposed test, sources and organizations doing related work.</p>
 
         <section class="group" id="planet" aria-labelledby="planet-title">
           <h3 class="group-heading" id="planet-title">Planet</h3>
-          <article class="point" id="power"><span class="number">01</span><div><h4>Protect our water, land and electric bills.</h4><p>Try running routine AI on shared machines in buildings we already have. Before a big data center gets a permit or a tax break, make its owners show how much water, land and electricity it needs and who pays for the upgrades. Set limits communities can enforce.</p>
+          <article class="point" id="power"><span class="number">01</span><div><h4>Protect our water, land and power bills.</h4><p>Run everyday AI on shared computers in buildings we already have when that makes sense. Before a data center gets a permit or a tax break, make its owners show how much water, land and electricity it will need, and who will pay for power upgrades. Give communities limits they can enforce.</p>
             <div class="point-research">
               <p class="label">Proposed test</p>
               <p><strong>Water, land and electricity.</strong> Compare electricity per completed task, peak load, cooling water and the space needed to deliver comparable services. Count the cluster’s idle draw.</p>
@@ -228,23 +229,11 @@
               </div>
             </div>
           </div></article>
-          <article class="point"><span class="number">02</span><div><h4>Let the neighbors sleep.</h4><p>Choose local equipment quiet enough to live beside. Measure fans, cooling equipment and backup generators where people actually live, including at night. Set enforceable limits and give neighbors a named operator to call.</p>
+          <article class="point" id="jobs"><span class="number">02</span><div><h4>Build jobs that stay.</h4><p>Count the jobs that will still be there after a data center opens. Bring libraries, schools, unions and local tech groups together to teach networking, computer repair and how to test AI. Pay local people to run shared computers and help their neighbors use them.</p>
             <div class="point-research">
               <p class="label">Proposed test</p>
-              <p><strong>Noise.</strong> Measure normal and peak loads at occupied spaces, including low-frequency sound and nighttime conditions.</p>
-              <div class="sources"><span class="label">Sources</span><a href="https://jlarc.virginia.gov/landing-2024-data-centers-in-virginia.asp">Virginia audit on siting and noise</a></div>
-              <div class="point-organizations">
-                <p class="label">Organizations working on this</p>
-                <ul>
-                  <li><a href="https://www.quietcommunities.org/data-center-noise">Quiet Communities</a> <span>Resources for residents dealing with data-center noise.</span></li>
-                </ul>
-              </div>
-            </div>
-          </div></article>
-          <article class="point"><span class="number">03</span><div><h4>Build jobs that stay.</h4><p>Pay people to operate, repair and teach others to use local AI. Before handing out public subsidies, count temporary construction and lasting local jobs separately. Put wages and hiring commitments in writing.</p>
-            <div class="point-research">
-              <p class="label">Proposed test</p>
-              <p><strong>Lasting jobs.</strong> Track paid operating and training hours and how much of a node’s spending stays local.</p>
+              <p><strong>Lasting jobs.</strong> Count paid jobs and training hours that remain after installation. Track what residents learn, whether it leads to paid work and how much of the spending stays local.</p>
+              <p class="point-context">Virginia’s legislative auditors reported an industry estimate of about 50 full-time workers at a typical 250,000-square-foot data center, roughly half contractors. Construction employs substantially more people.</p>
               <div class="sources"><span class="label">Sources</span><a href="https://jlarc.virginia.gov/landing-2024-data-centers-in-virginia.asp">Virginia audit on employment</a><a href="https://git.inference.coop/co-op/docs/src/branch/main/background.md">Inference Cooperative’s operating model</a></div>
               <div class="point-organizations">
                 <p class="label">Organizations working on this</p>
@@ -254,7 +243,21 @@
               </div>
             </div>
           </div></article>
-          <article class="point"><span class="number">04</span><div><h4>Use the AI we already have.</h4><p>Try smaller local models for everyday work like cleaning up an email or drafting a checklist. Move up to a bigger model when it makes a difference. Count useful work finished and resources used.</p>
+          <article class="point" id="noise"><span class="number">03</span><div><h4>Protect our sleep from noise.</h4><p>Cooling fans can make a steady hum, and backup generators can add bursts of noise. Measure both where people live and sleep. Ask residents how the noise affects their sleep, stress and well-being. Set limits people can enforce and give neighbors someone to call.</p>
+            <div class="point-research">
+              <p class="label">Proposed test</p>
+              <p><strong>Noise.</strong> Use a phone app for an initial check. Follow up with a calibrated meter that can measure low-frequency noise. Compare typical sound and peaks at homes, day and night, and invite residents to log sleep disruption and stress.</p>
+              <p class="point-context">Virginia’s legislative auditors found estimated levels of 40–59 decibels in selected cases that drew complaints. Those readings describe those cases. WHO links excessive environmental noise to disturbed sleep and reports growing evidence of mental-health effects.</p>
+              <div class="sources"><span class="label">Sources</span><a href="https://jlarc.virginia.gov/landing-2024-data-centers-in-virginia.asp">Virginia audit on siting and noise</a><a href="https://www.who.int/tools/compendium-on-health-and-environment/environmental-noise/">WHO guidance on noise and health</a><a href="https://www.cdc.gov/niosh/noise/about/app.html">NIOSH sound meter app</a></div>
+              <div class="point-organizations">
+                <p class="label">Organizations working on this</p>
+                <ul>
+                  <li><a href="https://www.quietcommunities.org/data-center-noise">Quiet Communities</a> <span>Resources for residents dealing with data-center noise.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div></article>
+          <article class="point"><span class="number">04</span><div><h4>Use AI without wasting energy.</h4><p>Treat the electricity AI uses like water at home. Use the smallest tool that does the job well, save useful work so it doesn’t have to be done twice, and turn off idle equipment when it’s safe to do so. Use a bigger model when it makes a real difference.</p>
             <div class="point-research">
               <p class="label">Proposed test</p>
               <p><strong>Everyday use.</strong> Compare local and cloud results on writing tasks. Measure accepted answers, retries and energy per accepted result.</p>
@@ -272,7 +275,7 @@
 
         <section class="group" id="privacy" aria-labelledby="privacy-title">
           <h3 class="group-heading" id="privacy-title">Privacy</h3>
-          <article class="point"><span class="number">05</span><div><h4>Keep private life private.</h4><p>Keep sensitive work on devices or local systems people trust. Keep private requests out of shared caches. Show people what would leave their system, ask first, and let them see and delete what’s kept.</p>
+          <article class="point"><span class="number">05</span><div><h4>Keep private life private.</h4><p>Keep sensitive work on devices or shared computers you trust. Tell people what would leave the system and ask first. Let people see and delete what the service keeps about them, and keep private requests out of shared answer libraries.</p>
             <div class="point-research">
               <p class="label">Proposed test</p>
               <p><strong>Privacy.</strong> Test what leaves the system, what other users can see, and what remains after deletion.</p>
@@ -285,7 +288,7 @@
               </div>
             </div>
           </div></article>
-          <article class="point" id="policy"><span class="number">06</span><div><h4>Give us a say and a switch.</h4><p>Give people a human way to get help and appeal an AI-assisted decision. Give operators an independent way to pause the AI or cut its cloud connection. Our water, electricity and other essential services should still be operable when that connection is cut.</p>
+          <article class="point" id="policy"><span class="number">06</span><div><h4>Give people a way to shut AI off.</h4><p>If AI helps make a decision about you, you should be able to talk to a person and challenge it. If an AI tool behaves dangerously, give operators a way to disconnect it that works independently of the AI itself. Test that essential services can still run safely under human control.</p>
             <div class="point-research">
               <p class="label">Proposed test</p>
               <p><strong>Human control and continuity.</strong> In an isolated simulation, test whether an operator can cut an AI system’s command path using a control outside the AI host. Verify that test commands stop reaching the simulated equipment and that the service stays safe under human control.</p>
@@ -299,11 +302,11 @@
               </div>
             </div>
           </div></article>
-          <article class="point"><span class="number">07</span><div><h4>Our knowledge, our rules.</h4><p>Tribal nations decide how their data and knowledge can be used. Other communities and rights holders should set the terms for material they steward. Build local systems that honor permission, limits on reuse and decisions to withdraw access.</p>
+          <article class="point" id="knowledge"><span class="number">07</span><div><h4>Protect community knowledge.</h4><p>Tribal nations decide how their knowledge and data are used. Elders, minority communities and other groups whose knowledge is often overlooked should be able to decide what to pass on, what to keep private, and who may use it. Get permission before recording stories, digitizing materials or using them in AI, and give people a way to withdraw access.</p>
             <div class="point-research">
               <p class="label">Proposed test</p>
-              <p><strong>Data sovereignty.</strong> Work with participating rights holders to test whether their rules hold when data is retrieved, reused, exported or deleted.</p>
-              <div class="sources"><span class="label">Sources</span><a href="https://localcontexts.org/labels/traditional-knowledge-labels/">Local Contexts Traditional Knowledge Labels</a><a href="https://fnigc.ca/ocap-training/">First Nations’ OCAP® principles</a></div>
+              <p><strong>Data sovereignty.</strong> Work with willing communities and rights holders. Test who can see, reuse, export or remove material and whether the service honors a decision to withdraw access.</p>
+              <div class="sources"><span class="label">Sources</span><a href="https://localcontexts.org/labels/traditional-knowledge-labels/">Local Contexts Traditional Knowledge Labels</a><a href="https://fnigc.ca/ocap-training/">First Nations’ OCAP® principles</a><a href="https://archive.storycorps.org/communities/perspectives-conversations-with-elders/">StoryCorps conversations with elders</a></div>
               <div class="point-organizations">
                 <p class="label">Organizations working on this</p>
                 <ul>
@@ -317,7 +320,7 @@
 
         <section class="group" id="people" aria-labelledby="people-title">
           <h3 class="group-heading" id="people-title">People</h3>
-          <article class="point"><span class="number">08</span><div><h4>Pool the machines. Share the keys.</h4><p>Start shared clusters with neighborhood groups, cooperatives and community institutions. Use the hardware that makes sense, including Apple, NVIDIA and other options. Give people a vote on access, spending and who operates the service.</p>
+          <article class="point"><span class="number">08</span><div><h4>Share computers and decide together.</h4><p>Set up shared computers in places like libraries, schools and cooperatives so people can use local AI without buying expensive equipment. Let the community decide who gets access, what to spend and who runs the service.</p>
             <div class="point-research">
               <p class="label">Proposed test</p>
               <p><strong>Shared access.</strong> Compare hardware and track cost per user, wait times, accessibility and who can actually use the service.</p>
@@ -331,7 +334,7 @@
               </div>
             </div>
           </div></article>
-          <article class="point"><span class="number">09</span><div><h4>Do the work once. Share what we learn.</h4><p>If fifty neighbors ask when the town picks up bulky waste, keep the official source and a checked answer nearby. Do the same for public research we have permission to share. Update or retire saved answers when the facts change.</p>
+          <article class="point"><span class="number">09</span><div><h4>Save answers we can trust.</h4><p>If fifty neighbors ask when the town picks up bulky waste, check the answer once and save it with the official source. Reuse it when the same public question comes up, and update it when the facts change. Keep personal questions private.</p>
             <div class="point-research">
               <p class="label">Proposed test</p>
               <p><strong>Reuse.</strong> Compare exact matches, matches by meaning and reuse of source documents. Count correct hits, stale answers and cloud calls avoided.</p>
@@ -345,7 +348,7 @@
               </div>
             </div>
           </div></article>
-          <article class="point"><span class="number">10</span><div><h4>Open the code. Show the receipts.</h4><p>Build with open-source software people can inspect, repair and adapt. Publish the models and licenses, when the system calls the cloud, what it costs, and how it performs. Teach others to run it so the next community can start further ahead.</p>
+          <article class="point"><span class="number">10</span><div><h4>Open the code and show what works.</h4><p>Use software people can inspect, fix and adapt. Show which AI tools you use, what their licenses allow, when they send work to the cloud, how much they cost and how well they work. Give another community enough information to try it for themselves.</p>
             <div class="point-research">
               <p class="label">Proposed test</p>
               <p><strong>Open evidence.</strong> Publish settings, public test tasks and results. Ask another community to repeat the comparison using different hardware.</p>
