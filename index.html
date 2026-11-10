@@ -42,6 +42,9 @@
     nav a:hover{text-decoration:underline}
     .eyebrow,.number,.label{font:650 .73rem/1.5 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--green)}
     .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;gap:clamp(1.6rem,5vw,5rem);padding-block:clamp(3rem,7.5vw,7rem)}
+    .earthrise img{display:block;width:100%;height:auto;aspect-ratio:1.5;object-fit:cover;object-position:center 88%;border-radius:.4rem;background:#050605}
+    .earthrise figcaption{margin-top:.55rem;color:var(--muted);font:.72rem/1.4 var(--mono);text-align:right}
+    .architecture{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(1.5rem,5vw,4rem)}
     h1{font-size:clamp(3.15rem,7.1vw,6.6rem);letter-spacing:-.075em;line-height:.92;margin-block:1.05rem 1.35rem;text-wrap:initial}
     h1 span{display:block;color:var(--green)}
     .lede{font-size:clamp(1.05rem,2vw,1.2rem);max-width:43rem;color:var(--muted)}
@@ -67,7 +70,8 @@
     .pillars{border-block:1px solid var(--line);background:var(--raised)}
     .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.35rem}
     .pillars .three{padding-block:1.25rem}
-    .pillars a{display:block;text-decoration:none}
+    .pillars a{display:grid;grid-template-columns:2.8rem minmax(0,1fr);align-items:center;gap:.75rem;text-decoration:none}
+    .pillar-icon{display:block;width:2.8rem;height:2.8rem;padding:.5rem;border:1px solid var(--line);border-radius:.35rem;background:var(--surface);fill:none;stroke:currentColor;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round}
     .pillars a:hover strong{text-decoration:underline}
     .pillars strong{font:normal 1.65rem var(--serif)}
     .pillars span{display:block;color:var(--muted);font-size:.9rem}
@@ -98,7 +102,7 @@
     footer{color:var(--muted);font-size:.85rem}
     @media(max-width:760px){
       .wrap{width:calc(100% - 2rem)}
-      .hero,.about .wrap{grid-template-columns:1fr}
+      .hero,.architecture,.about .wrap{grid-template-columns:1fr}
       .hero{gap:1.75rem}
       .group{display:block}
       .point{grid-template-columns:1.75rem minmax(0,1fr)}
@@ -106,7 +110,6 @@
     @media(max-width:540px){
       .three{grid-template-columns:1fr}
       .pillars .three{gap:.65rem}
-      .pillars a{display:flex;align-items:baseline;gap:.55rem;flex-wrap:wrap}
       .directory{columns:1}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -137,36 +140,53 @@
           <a href="#contact">Help build it</a>
         </div>
       </div>
-      <figure class="diagram">
-        <figcaption><span class="eyebrow">A neighborhood AI network</span><span>Illustrative scenarios</span></figcaption>
-        <div class="demo-options" role="group" aria-label="Choose an example" hidden>
-          <button type="button" aria-pressed="true" data-scenario="private">Private draft</button>
-          <button type="button" aria-pressed="false" data-scenario="public">Public question</button>
-          <button type="button" aria-pressed="false" data-scenario="offline">Cloud offline</button>
-        </div>
-        <div class="route" aria-hidden="true">
-          <div class="node"><strong>You</strong><small>Phone or laptop</small></div>
-          <span class="arrow">→</span>
-          <div class="node is-active"><strong>Local cluster</strong><small>Shared computers</small></div>
-          <span class="arrow cloud-arrow">·</span>
-          <div class="node cloud-node"><strong>Cloud</strong><small>Unused</small></div>
-        </div>
-        <p class="demo-result" aria-live="polite" aria-atomic="true"><strong>Your draft stays local.</strong><span>The shared computers help edit a letter. Its contents stay out of the public answer cache and the cloud.</span></p>
+      <figure class="earthrise">
+        <img src="assets/earthrise.jpg" alt="Earth rising above the Moon’s horizon against black space" width="1920" height="1920" fetchpriority="high">
+        <figcaption>Earthrise · Apollo 8 · NASA</figcaption>
       </figure>
     </section>
 
     <div class="pillars">
       <div class="wrap three">
-        <a href="#planet"><strong>Planet</strong><span>Protect water, land and electricity.</span></a>
-        <a href="#privacy"><strong>Privacy</strong><span>Keep sensitive work close.</span></a>
-        <a href="#people"><strong>People</strong><span>Share the machines and the decisions.</span></a>
+        <a href="#planet">
+          <svg class="pillar-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18M5 7h14M5 17h14"/></svg>
+          <div><strong>Planet</strong><span>Protect water, land and electricity.</span></div>
+        </a>
+        <a href="#privacy">
+          <svg class="pillar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 20 6v5c0 4.4-3.1 7.8-8 10.5C7.1 18.8 4 15.4 4 11V6l8-3.5Z"/><rect x="8.7" y="10.6" width="6.6" height="5.5" rx=".8"/><path d="M10.2 10.6V9a1.8 1.8 0 0 1 3.6 0v1.6"/></svg>
+          <div><strong>Privacy</strong><span>Keep sensitive work close.</span></div>
+        </a>
+        <a href="#people">
+          <svg class="pillar-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M6 20v-1.5a6 6 0 0 1 12 0V20M3 18v-1a4.7 4.7 0 0 1 2.7-4.2M21 18v-1a4.7 4.7 0 0 0-2.7-4.2M5.5 10.5a2.5 2.5 0 0 1 0-5M18.5 10.5a2.5 2.5 0 0 0 0-5"/></svg>
+          <div><strong>People</strong><span>Share the machines and the decisions.</span></div>
+        </a>
       </div>
     </div>
 
     <section class="section wrap" id="why">
-      <p class="eyebrow">How global local AI works</p>
-      <h2>Run it close. Share what works.</h2>
-      <p class="lede">AI can run on your device or on a group of computers your community shares. That group is a local cluster. Communities can share tools and lessons worldwide while deciding for themselves where their work runs.</p>
+      <div class="architecture">
+        <div>
+          <p class="eyebrow">How global local AI works</p>
+          <h2>Run it close. Share what works.</h2>
+          <p class="lede">AI can run on your device or on a group of computers your community shares. That group is a local cluster. Communities can share tools and lessons worldwide while deciding for themselves where their work runs.</p>
+        </div>
+        <figure class="diagram">
+          <figcaption><span class="eyebrow">A neighborhood AI network</span><span>Illustrative scenarios</span></figcaption>
+          <div class="demo-options" role="group" aria-label="Choose an example" hidden>
+            <button type="button" aria-pressed="true" data-scenario="private">Private draft</button>
+            <button type="button" aria-pressed="false" data-scenario="public">Public question</button>
+            <button type="button" aria-pressed="false" data-scenario="offline">Cloud offline</button>
+          </div>
+          <div class="route" aria-hidden="true">
+            <div class="node"><strong>You</strong><small>Phone or laptop</small></div>
+            <span class="arrow">→</span>
+            <div class="node is-active"><strong>Local cluster</strong><small>Shared computers</small></div>
+            <span class="arrow cloud-arrow">·</span>
+            <div class="node cloud-node"><strong>Cloud</strong><small>Unused</small></div>
+          </div>
+          <p class="demo-result" aria-live="polite" aria-atomic="true"><strong>Your draft stays local.</strong><span>The shared computers help edit a letter. Its contents stay out of the public answer cache and the cloud.</span></p>
+        </figure>
+      </div>
       <div class="three steps">
         <article><h3>Start close to home.</h3><p>Use smaller models for everyday work, like editing a letter or organizing notes. Pool the hardware so access doesn’t depend on buying a powerful machine.</p></article>
         <article><h3>Reuse good work.</h3><p>When neighbors ask the same public question, keep a checked answer and its source nearby. Refresh it when the facts change. Keep personal requests separate.</p></article>
