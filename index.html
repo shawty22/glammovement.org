@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GLAM — Build AI closer to home</title>
+  <title>GLAM — Build an AI cluster at home</title>
   <meta name="description" content="GLAM is a technologist-led advocacy and community-building movement for local AI. Protect resources, privacy and community control.">
   <link rel="canonical" href="https://glammovement.org/">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="GLAM — Build AI closer to home">
+  <meta property="og:title" content="GLAM — Build an AI cluster at home">
   <meta property="og:description" content="Planet. Privacy. People. Build shared AI close to home and share what works worldwide.">
   <meta property="og:url" content="https://glammovement.org/">
   <meta property="og:image" content="https://glammovement.org/assets/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GLAM — Build AI closer to home">
+  <meta name="twitter:title" content="GLAM — Build an AI cluster at home">
   <meta name="twitter:description" content="Planet. Privacy. People. Build shared AI close to home and share what works worldwide.">
   <meta name="twitter:image" content="https://glammovement.org/assets/og-image.jpg">
   <style>
@@ -279,6 +279,30 @@
       .go.stop svg{width:1.4rem}
       .sound-compare .solid{max-width:20rem;margin:auto;width:100%}
     }
+
+    /* Movement participation and manifesto layout. */
+    .movement-pathways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:2rem 0 0}
+    .movement-pathways article{padding:1.35rem;border-top:2px solid var(--green);background:var(--raised);border-radius:0 0 .6rem .6rem}
+    .movement-pathways h3{font-size:2.25rem;margin:.6rem 0}
+    .movement-pathways p{color:var(--muted);font-size:.95rem}
+    .pathway-symbol{display:grid;place-items:center;width:2.8rem;height:2.8rem;border-radius:50%;background:var(--green);color:var(--background);font:600 1.2rem var(--sans)}
+    .commitments-heading{margin-bottom:1.3rem}
+    .commitments-heading h3{font-size:2.4rem}
+    .commitments-heading p{color:var(--muted)}
+    .commitments-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;align-items:start}
+    .mock-commitment{display:block;grid-column:auto;margin:0;min-width:0;border-left:1px solid var(--line)}
+    .mock-commitment h4{font-size:1.8rem}
+    .mock-commitment .point-subtitle{min-height:3.3rem}
+    .mock-commitment .commitment-visual{min-height:3.25rem}
+    .category-anchor{scroll-margin-top:2rem}
+    .jobs-outcome{margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--line)}
+    .jobs-path-intro{max-width:47rem;margin-bottom:1.5rem}
+    .jobs-path-intro h3{font-size:2.5rem;margin:.6rem 0}
+    .jobs-path-intro p{color:var(--muted)}
+    .skills-path{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin-top:1.2rem}
+    .skills-path span{padding:.4rem .7rem;border:1px solid var(--line);border-radius:.4rem}
+    .skills-path b{color:var(--green)}
+    @media(max-width:760px){.movement-pathways,.commitments-grid{grid-template-columns:1fr}.mock-commitment .point-subtitle{min-height:0}.movement-pathways{gap:.75rem}.skills-path{font-size:.85rem}.movement-pathways article{padding:1rem}.movement-pathways h3{display:inline;margin-left:.65rem}.pathway-symbol{display:inline-grid;vertical-align:middle}.movement-pathways p{margin-top:.7rem}}
 </style>
 </head>
 <body id="top">
@@ -287,6 +311,7 @@
     <div class="wrap">
       <a class="brand" href="#top" aria-label="GLAM home">GLAM<span aria-hidden="true"></span></a>
       <nav aria-label="Main navigation">
+        <a href="#movement">The movement</a>
         <a href="#glamifesto">GLAMifesto</a>
         <a href="#why">How it works</a>
         <a href="#research">Research</a>
@@ -299,8 +324,8 @@
     <section class="hero wrap" aria-labelledby="hero-title">
       <div>
         <p class="eyebrow">Global Local AI Mobilization</p>
-        <h1 id="hero-title">Build AI <span>closer to home.</span></h1>
-        <p class="lede">GLAM is a technologist-led advocacy and community-building movement. We bring people together to shape how AI uses resources, protects privacy and serves communities.</p>
+        <h1 id="hero-title">Build an AI cluster<span>at home.</span></h1>
+        <p class="lede">GLAM is an advocacy movement of technologists and community builders. Through education, discussion and practical projects, we help people understand AI, build local systems and shape how AI is used.</p>
         <div class="actions">
           <a class="button" href="#glamifesto">Read the GLAMifesto</a>
           <a href="#contact">Get involved</a>
@@ -330,13 +355,41 @@
     </div>
 
 
+    <section class="section manifesto" id="movement">
+      <div class="wrap">
+        <p class="eyebrow">Take part in the movement</p>
+        <h2>Learn. Debate. Build.</h2>
+        <p class="lede">We organize communities to shape AI together. We build open-source tools using open-source AI and share how they work.</p>
+        <div class="movement-pathways">
+          <article>
+            <span class="pathway-symbol" aria-hidden="true">?</span>
+            <h3>Learn</h3>
+            <p>Understand AI and its impacts. Get practical education and training in how local AI systems work.</p>
+          </article>
+          <article>
+            <span class="pathway-symbol" aria-hidden="true">↔</span>
+            <h3>Debate</h3>
+            <p>Discuss AI’s benefits, costs and impacts. Help shape where and how it is used, what stays private and who is responsible.</p>
+          </article>
+          <article>
+            <span class="pathway-symbol" aria-hidden="true">&lt;/&gt;</span>
+            <h3>Build</h3>
+            <p>Pool compute so a neighborhood can run its own private AI. Build and run the systems together, and share what works.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section manifesto" id="glamifesto">
       <div id="power-privacy-policy" aria-hidden="true"></div>
       <div id="resources" aria-hidden="true"></div>
       <div class="wrap">
-        <p class="eyebrow">Ten commitments for the Mobilization</p><h2>The GLAMifesto</h2><p class="lede">Here is our ten-point plan for AI that communities can help shape. Explore the ideas, proposed tests, sources and organizations working on each commitment.</p>
-<section class="group" id="planet" aria-labelledby="planet-title"><h3 class="group-heading" id="planet-title"><svg class="pillar-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#5cbcff" stroke="none"/><path d="m6 4 5-1 1 4-3 3-5-1-1 4-1-1a10 10 0 0 1 4-8Zm8 4 5-2 3 6-3 3-1 5-4 2-2-6 2-3-1-3Z" fill="#8cdb71" stroke="none"/></svg><span>Planet</span></h3>
-<article class="point" id="power"><span class="number">01</span><div><h4>Water, land and power</h4><p class="point-subtitle">Protect our water, land and power bills.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#62c9ff"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2C13 7 6 15 6 21a10 10 0 0 0 20 0c0-6-7-14-10-19Z"/><path class="detail" d="M10 21a6 6 0 0 0 6 6"/></svg></span><span class="commitment-icon" style="--icon-color:#86d96a"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m1 28 11-22 7 13 5-9 7 18Z"/><path class="detail" d="m9 13 3 3 3-3"/></svg></span><span class="commitment-icon" style="--icon-color:#ffcf45"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19 2 4 19h10l-1 11 15-18H18Z"/></svg></span></div>
+        <div class="commitments-heading">
+          <h2>The GLAMifesto</h2>
+          <p>Our commitments guide what we advocate for, learn about and test together.</p>
+        </div>
+        <div class="commitments-grid">
+<article class="point mock-commitment" id="power"><div><span id="planet" class="category-anchor"></span><h4>Water, land and power</h4><p class="point-subtitle">Protect our water, land and power bills.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#62c9ff"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2C13 7 6 15 6 21a10 10 0 0 0 20 0c0-6-7-14-10-19Z"/><path class="detail" d="M10 21a6 6 0 0 0 6 6"/></svg></span><span class="commitment-icon" style="--icon-color:#86d96a"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m1 28 11-22 7 13 5-9 7 18Z"/><path class="detail" d="m9 13 3 3 3-3"/></svg></span><span class="commitment-icon" style="--icon-color:#ffcf45"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19 2 4 19h10l-1 11 15-18H18Z"/></svg></span></div>
           <div class="point-disclosures">
             <details>
               <summary>The idea</summary>
@@ -354,24 +407,7 @@
             </details>
           </div>
         </div></article>
-<article class="point" id="jobs"><span class="number">02</span><div><h4>Jobs that stay</h4><p class="point-subtitle">Train local people to build, run and maintain community AI.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#f6c58e"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 13h20M8 12a8 8 0 0 1 16 0M13 5v7m6-7v7"/><path d="M10 17a6 6 0 0 0 12 0M5 29v-3a11 11 0 0 1 22 0v3M12 22v7m8-7v7"/></svg></span><span class="commitment-icon" style="--icon-color:#bba9f0"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="4"/><path d="M12 2v5m8-5v5M12 25v5m8-5v5M2 12h5m-5 8h5m18-8h5m-5 8h5M12 12h8v8h-8Z"/></svg></span><span class="commitment-icon" style="--icon-color:#91d4ed"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M14 4h15v16H18M19 9h6m-6 5h3"/><circle cx="8" cy="10" r="4"/><path d="M2 29v-8a6 6 0 0 1 12 0v8M14 22l7-5"/></svg></span></div>
-          <div class="point-disclosures">
-            <details>
-              <summary>The idea</summary>
-              <div class="disclosure-body"><p>A typical 250,000-square-foot data center is bigger than four football fields. Industry representatives told Virginia’s auditors it may have about 50 full-time workers, about half of them contractors. A small community cluster can create a different kind of opportunity. Local people can learn to build, run and maintain it, and train in machine learning, networking, computing, inference, AI agents and agentic coding. Each person trained can help train the next. The people who maintain the community system can go on to find good jobs in AI. We want to start with disadvantaged communities.</p><figure class="info" aria-labelledby="jobs-diagram"><figcaption id="jobs-diagram" class="cap">Different spaces. A different opportunity.</figcaption><div class="comparison"><div class="solid amber"><span class="mini">Typical data center</span><strong class="big-stat">250,000 sq ft</strong><div class="fields" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span>Bigger than four football fields</span><strong>About 50 full-time workers</strong><span>About half contractors. Industry estimate reported to Virginia’s auditors.</span></div><div class="solid teal"><span class="mini">Community proposal</span><div class="server-mark" aria-hidden="true"><i></i><i></i><i></i></div><strong>A small local cluster</strong><span>In a shared community space.</span><span>People can learn by building, running and maintaining it.</span></div></div><div class="training"><div class="training-rings" id="glow"><div class="ring-outer"><span>And so on</span><div class="ring-middle"><span>They train the next group</span><div class="ring-inner"><span>First people trained</span><div class="ring-core">Local<br>cluster</div></div></div></div></div><div><p class="cap">Training that spreads</p><p>Each person trained can help train the next.</p><ul class="skills"><li>Machine learning</li><li>Networking</li><li>Computing</li><li>Inference</li><li>AI agents</li><li>Agentic coding</li></ul></div></div><div class="solid green "><strong>From maintaining the community system → good jobs in AI</strong><span>A path we want to test, starting with disadvantaged communities.</span></div><p class="diagram-note">Illustration of the idea, not a forecast.</p></figure></div>
-            </details>
-            <details>
-              <summary>Proposed tests</summary>
-              <div class="disclosure-body point-research"><p><strong>Lasting skills and jobs.</strong> Count how many local people are trained, how many go on to train others, and whether the training leads to work in AI. Track training hours, what residents learn and how much of the spending stays local.</p><p class="point-context">Virginia’s legislative auditors reported an industry estimate of about 50 full-time workers at a typical 250,000-square-foot data center, roughly half contractors. Construction employs substantially more people.</p><div class="sources"><span class="label">Sources</span><a href="https://jlarc.virginia.gov/landing-2024-data-centers-in-virginia.asp">Virginia audit on employment</a><a href="https://git.inference.coop/co-op/docs/src/branch/main/background.md">Inference Cooperative’s operating model</a></div></div>
-            </details>
-            <details>
-              <summary>Organizations</summary>
-              <div class="disclosure-body point-organizations"><ul>
-                  <li><a href="https://www.jff.org/idea/si-semiconductor-and-nuclear-energy-infrastructure-apprenticeship-incentive-fund/">Jobs for the Future</a> <span>Registered apprenticeships for AI infrastructure and related trades.</span></li></ul></div>
-            </details>
-          </div>
-        </div></article>
-<article class="point" id="noise"><span class="number">03</span><div><h4>Quiet homes</h4><p class="point-subtitle">Protect people from data center noise, day and night.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#a9c4fa"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 15 16 3l14 12-4 1v14H6V16Z"/><path class="detail" d="M13 30V20h6v10"/></svg></span><span class="commitment-icon" style="--icon-color:#e3adfa"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 18v-4a13 13 0 0 1 26 0v4h-4v-4a9 9 0 0 0-18 0v4Z"/><rect x="1" y="15" width="8" height="15" rx="3"/><rect x="23" y="15" width="8" height="15" rx="3"/></svg></span></div>
+<article class="point mock-commitment" id="noise"><div><h4>Quiet homes</h4><p class="point-subtitle">Protect people from data center noise, day and night.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#a9c4fa"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 15 16 3l14 12-4 1v14H6V16Z"/><path class="detail" d="M13 30V20h6v10"/></svg></span><span class="commitment-icon" style="--icon-color:#e3adfa"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 18v-4a13 13 0 0 1 26 0v4h-4v-4a9 9 0 0 0-18 0v4Z"/><rect x="1" y="15" width="8" height="15" rx="3"/><rect x="23" y="15" width="8" height="15" rx="3"/></svg></span></div>
           <div class="point-disclosures">
             <details>
               <summary>The idea</summary>
@@ -388,7 +424,7 @@
             </details>
           </div>
         </div></article>
-<article class="point" id="energy"><span class="number">04</span><div><h4>Energy efficiency</h4><p class="point-subtitle">Use AI without wasting energy.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#ffcf45"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19 2 4 19h10l-1 11 15-18H18Z"/></svg></span></div>
+<article class="point mock-commitment" id="energy"><div><h4>Energy efficiency</h4><p class="point-subtitle">Use AI without wasting energy.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#ffcf45"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19 2 4 19h10l-1 11 15-18H18Z"/></svg></span></div>
           <div class="point-disclosures">
             <details>
               <summary>The idea</summary>
@@ -406,9 +442,7 @@
             </details>
           </div>
         </div></article>
-</section>
-<section class="group" id="privacy" aria-labelledby="privacy-title"><h3 class="group-heading" id="privacy-title"><svg class="pillar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 9 4v6c0 5-6 9-9 10-3-1-9-5-9-10V6Z" fill="#c6a5f8" stroke="none"/><rect x="8" y="11" width="8" height="7" rx="1.5" fill="#1b202a" stroke="none"/><path d="M9.5 11V9a2.5 2.5 0 0 1 5 0v2" stroke="#1b202a" stroke-width="1.8"/><circle cx="12" cy="14" r="1" fill="#c6a5f8" stroke="none"/></svg><span>Privacy</span></h3>
-<article class="point" id="private-life"><span class="number">05</span><div><h4>Privacy</h4><p class="point-subtitle">Keep private life private.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#bcaef1"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m16 2 12 5v9c0 7-8 12-12 14C12 28 4 23 4 16V7Z"/><rect x="11" y="14" width="10" height="9" rx="2"/><path d="M13 14v-3a3 3 0 0 1 6 0v3M16 18v2"/></svg></span></div>
+<article class="point mock-commitment" id="private-life"><div><span id="privacy" class="category-anchor"></span><h4>Privacy</h4><p class="point-subtitle">Keep private life private.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#bcaef1"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m16 2 12 5v9c0 7-8 12-12 14C12 28 4 23 4 16V7Z"/><rect x="11" y="14" width="10" height="9" rx="2"/><path d="M13 14v-3a3 3 0 0 1 6 0v3M16 18v2"/></svg></span></div>
           <div class="point-disclosures">
             <details>
               <summary>The idea</summary>
@@ -425,7 +459,7 @@
             </details>
           </div>
         </div></article>
-<article class="point" id="people-in-charge"><span class="number">06</span><div><h4>Human control</h4><p class="point-subtitle">Give people a way to shut AI off.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#a4c8f7"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="8" r="5"/><path d="M7 29v-5a9 9 0 0 1 18 0v5M12 22v7m8-7v7"/></svg></span><span class="commitment-icon" style="--icon-color:#f4aaa0"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2v13M9 7a12 12 0 1 0 14 0"/></svg></span></div>
+<article class="point mock-commitment" id="people-in-charge"><div><h4>Human control</h4><p class="point-subtitle">Give people a way to shut AI off.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#a4c8f7"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="8" r="5"/><path d="M7 29v-5a9 9 0 0 1 18 0v5M12 22v7m8-7v7"/></svg></span><span class="commitment-icon" style="--icon-color:#f4aaa0"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2v13M9 7a12 12 0 1 0 14 0"/></svg></span></div>
           <div class="point-disclosures">
             <details>
               <summary>The idea</summary>
@@ -443,7 +477,7 @@
             </details>
           </div>
         </div></article>
-<article class="point" id="community-knowledge"><span class="number">07</span><div><h4>Community knowledge</h4><p class="point-subtitle">Protect what communities choose to keep private.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#f1c294"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="7" r="4"/><circle cx="5" cy="13" r="3"/><circle cx="27" cy="13" r="3"/><path d="M9 29v-7a7 7 0 0 1 14 0v7M1 29v-5a5 5 0 0 1 7-5m23 10v-5a5 5 0 0 0-7-5"/></svg></span><span class="commitment-icon" style="--icon-color:#c8aff4"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 8C11 4 5 4 2 5v22c5-2 10-1 14 2 4-3 9-4 14-2V5c-3-1-9-1-14 3Zm0 0v21M6 11l5 1m-5 5 5 1m10-6 5-1m-5 7 5-1"/></svg></span><span class="commitment-icon" style="--icon-color:#9dd7cb"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m16 2 12 5v9c0 7-8 12-12 14C12 28 4 23 4 16V7Z"/><rect x="11" y="14" width="10" height="9" rx="2"/><path d="M13 14v-3a3 3 0 0 1 6 0v3M16 18v2"/></svg></span></div>
+<article class="point mock-commitment" id="community-knowledge"><div><h4>Community knowledge</h4><p class="point-subtitle">Protect what communities choose to keep private.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#f1c294"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="7" r="4"/><circle cx="5" cy="13" r="3"/><circle cx="27" cy="13" r="3"/><path d="M9 29v-7a7 7 0 0 1 14 0v7M1 29v-5a5 5 0 0 1 7-5m23 10v-5a5 5 0 0 0-7-5"/></svg></span><span class="commitment-icon" style="--icon-color:#c8aff4"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 8C11 4 5 4 2 5v22c5-2 10-1 14 2 4-3 9-4 14-2V5c-3-1-9-1-14 3Zm0 0v21M6 11l5 1m-5 5 5 1m10-6 5-1m-5 7 5-1"/></svg></span><span class="commitment-icon" style="--icon-color:#9dd7cb"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m16 2 12 5v9c0 7-8 12-12 14C12 28 4 23 4 16V7Z"/><rect x="11" y="14" width="10" height="9" rx="2"/><path d="M13 14v-3a3 3 0 0 1 6 0v3M16 18v2"/></svg></span></div>
           <div class="point-disclosures">
             <details>
               <summary>The idea</summary>
@@ -462,9 +496,7 @@
             </details>
           </div>
         </div></article>
-</section>
-<section class="group" id="people" aria-labelledby="people-title"><h3 class="group-heading" id="people-title"><svg class="pillar-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="8" r="3" fill="#f8bc7b" stroke="none"/><circle cx="19" cy="8" r="3" fill="#c8a4f8" stroke="none"/><path d="M0 21v-6a5 5 0 0 1 10 0v6Z" fill="#f8bc7b" stroke="none"/><path d="M14 21v-6a5 5 0 0 1 10 0v6Z" fill="#c8a4f8" stroke="none"/><circle cx="12" cy="6" r="3.5" fill="#81d5f9" stroke="none"/><path d="M6.5 22v-6a5.5 5.5 0 0 1 11 0v6Z" fill="#81d5f9" stroke="none"/></svg><span>People</span></h3>
-<article class="point" id="shared-computers"><span class="number">08</span><div><h4>Community compute</h4><p class="point-subtitle">Make local AI available in public spaces, with the community in charge.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#98d5f0"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="2" width="12" height="9" rx="1"/><rect x="19" y="2" width="12" height="9" rx="1"/><rect x="10" y="21" width="12" height="9" rx="1"/><path d="M7 11v5h18v-5M16 16v5M4 14h6m12 0h6"/></svg></span><span class="commitment-icon" style="--icon-color:#edc59f"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="7" r="4"/><circle cx="5" cy="13" r="3"/><circle cx="27" cy="13" r="3"/><path d="M9 29v-7a7 7 0 0 1 14 0v7M1 29v-5a5 5 0 0 1 7-5m23 10v-5a5 5 0 0 0-7-5"/></svg></span></div>
+<article class="point mock-commitment" id="shared-computers"><div><span id="people" class="category-anchor"></span><h4>Community compute</h4><p class="point-subtitle">Make local AI available in public spaces, with the community in charge.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#98d5f0"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="2" width="12" height="9" rx="1"/><rect x="19" y="2" width="12" height="9" rx="1"/><rect x="10" y="21" width="12" height="9" rx="1"/><path d="M7 11v5h18v-5M16 16v5M4 14h6m12 0h6"/></svg></span><span class="commitment-icon" style="--icon-color:#edc59f"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="7" r="4"/><circle cx="5" cy="13" r="3"/><circle cx="27" cy="13" r="3"/><path d="M9 29v-7a7 7 0 0 1 14 0v7M1 29v-5a5 5 0 0 1 7-5m23 10v-5a5 5 0 0 0-7-5"/></svg></span></div>
           <div class="point-disclosures">
             <details>
               <summary>The idea</summary>
@@ -482,7 +514,7 @@
             </details>
           </div>
         </div></article>
-<article class="point" id="trusted-answers"><span class="number">09</span><div><h4>Trusted answers</h4><p class="point-subtitle">Build a shared library of checked answers, backed by sources.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#a6d6f3"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 8C11 4 5 4 2 5v22c5-2 10-1 14 2 4-3 9-4 14-2V5c-3-1-9-1-14 3Zm0 0v21M6 11l5 1m-5 5 5 1m10-6 5-1m-5 7 5-1"/></svg></span><span class="commitment-icon" style="--icon-color:#a9db96"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 3h15l6 6v20H6ZM20 3v7h7"/><path d="m11 19 4 4 7-9"/></svg></span></div>
+<article class="point mock-commitment" id="trusted-answers"><div><h4>Trusted answers</h4><p class="point-subtitle">Build a shared library of checked answers, backed by sources.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#a6d6f3"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 8C11 4 5 4 2 5v22c5-2 10-1 14 2 4-3 9-4 14-2V5c-3-1-9-1-14 3Zm0 0v21M6 11l5 1m-5 5 5 1m10-6 5-1m-5 7 5-1"/></svg></span><span class="commitment-icon" style="--icon-color:#a9db96"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 3h15l6 6v20H6ZM20 3v7h7"/><path d="m11 19 4 4 7-9"/></svg></span></div>
           <div class="point-disclosures">
             <details>
               <summary>The idea</summary>
@@ -500,7 +532,7 @@
             </details>
           </div>
         </div></article>
-<article class="point" id="open-code"><span class="number">10</span><div><h4>Open source</h4><p class="point-subtitle">Use tools people can inspect, improve and share.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#b6e99c"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="14" width="24" height="17" rx="3"/><path d="M8 14V9a8 8 0 0 1 16 0h-4a4 4 0 0 0-8 0v5Z"/><path class="detail" d="m12 19-4 4 4 4m8-8 4 4-4 4"/></svg></span></div>
+<article class="point mock-commitment" id="open-code"><div><h4>Open source</h4><p class="point-subtitle">Use tools people can inspect, improve and share.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#b6e99c"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="14" width="24" height="17" rx="3"/><path d="M8 14V9a8 8 0 0 1 16 0h-4a4 4 0 0 0-8 0v5Z"/><path class="detail" d="m12 19-4 4 4 4m8-8 4 4-4 4"/></svg></span></div>
           <div class="point-disclosures">
             <details>
               <summary>The idea</summary>
@@ -518,14 +550,41 @@
             </details>
           </div>
         </div></article>
-</section>
+        </div>
+        <section class="jobs-outcome" aria-labelledby="jobs-path-title">
+          <div class="jobs-path-intro">
+            <p class="eyebrow">Putting skills to work</p>
+            <h3 id="jobs-path-title">Learning can lead to livelihoods.</h3>
+            <p>Through education, training and hands-on projects, we aim to prepare participants for technical jobs in AI, networking and computing. We want to test whether those skills lead to paid local work and help people train others.</p>
+            <div class="skills-path" aria-label="A proposed pathway to local work">
+              <span>Learn together</span><b aria-hidden="true">→</b><span>Build and maintain</span><b aria-hidden="true">→</b><span>Paid work and teaching others</span>
+            </div>
+          </div>
+<article class="point mock-commitment" id="jobs"><div><h4>Jobs that stay</h4><p class="point-subtitle">Train local people to build, run and maintain community AI.</p><div class="commitment-visual" aria-hidden="true"><span class="commitment-icon" style="--icon-color:#f6c58e"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 13h20M8 12a8 8 0 0 1 16 0M13 5v7m6-7v7"/><path d="M10 17a6 6 0 0 0 12 0M5 29v-3a11 11 0 0 1 22 0v3M12 22v7m8-7v7"/></svg></span><span class="commitment-icon" style="--icon-color:#bba9f0"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="4"/><path d="M12 2v5m8-5v5M12 25v5m8-5v5M2 12h5m-5 8h5m18-8h5m-5 8h5M12 12h8v8h-8Z"/></svg></span><span class="commitment-icon" style="--icon-color:#91d4ed"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M14 4h15v16H18M19 9h6m-6 5h3"/><circle cx="8" cy="10" r="4"/><path d="M2 29v-8a6 6 0 0 1 12 0v8M14 22l7-5"/></svg></span></div>
+          <div class="point-disclosures">
+            <details>
+              <summary>The idea</summary>
+              <div class="disclosure-body"><p>A typical 250,000-square-foot data center is bigger than four football fields. Industry representatives told Virginia’s auditors it may have about 50 full-time workers, about half of them contractors. A small community cluster can create a different kind of opportunity. Local people can learn to build, run and maintain it, and train in machine learning, networking, computing, inference, AI agents and agentic coding. Each person trained can help train the next. The people who maintain the community system can go on to find good jobs in AI. We want to start with disadvantaged communities.</p><figure class="info" aria-labelledby="jobs-diagram"><figcaption id="jobs-diagram" class="cap">Different spaces. A different opportunity.</figcaption><div class="comparison"><div class="solid amber"><span class="mini">Typical data center</span><strong class="big-stat">250,000 sq ft</strong><div class="fields" aria-hidden="true"><i></i><i></i><i></i><i></i></div><span>Bigger than four football fields</span><strong>About 50 full-time workers</strong><span>About half contractors. Industry estimate reported to Virginia’s auditors.</span></div><div class="solid teal"><span class="mini">Community proposal</span><div class="server-mark" aria-hidden="true"><i></i><i></i><i></i></div><strong>A small local cluster</strong><span>In a shared community space.</span><span>People can learn by building, running and maintaining it.</span></div></div><div class="training"><div class="training-rings" id="glow"><div class="ring-outer"><span>And so on</span><div class="ring-middle"><span>They train the next group</span><div class="ring-inner"><span>First people trained</span><div class="ring-core">Local<br>cluster</div></div></div></div></div><div><p class="cap">Training that spreads</p><p>Each person trained can help train the next.</p><ul class="skills"><li>Machine learning</li><li>Networking</li><li>Computing</li><li>Inference</li><li>AI agents</li><li>Agentic coding</li></ul></div></div><div class="solid green "><strong>From maintaining the community system → good jobs in AI</strong><span>A path we want to test, starting with disadvantaged communities.</span></div><p class="diagram-note">Illustration of the idea, not a forecast.</p></figure></div>
+            </details>
+            <details>
+              <summary>Proposed tests</summary>
+              <div class="disclosure-body point-research"><p><strong>Lasting skills and jobs.</strong> Count how many local people are trained, how many go on to train others, and whether the training leads to work in AI. Track training hours, what residents learn and how much of the spending stays local.</p><p class="point-context">Virginia’s legislative auditors reported an industry estimate of about 50 full-time workers at a typical 250,000-square-foot data center, roughly half contractors. Construction employs substantially more people.</p><div class="sources"><span class="label">Sources</span><a href="https://jlarc.virginia.gov/landing-2024-data-centers-in-virginia.asp">Virginia audit on employment</a><a href="https://git.inference.coop/co-op/docs/src/branch/main/background.md">Inference Cooperative’s operating model</a></div></div>
+            </details>
+            <details>
+              <summary>Organizations</summary>
+              <div class="disclosure-body point-organizations"><ul>
+                  <li><a href="https://www.jff.org/idea/si-semiconductor-and-nuclear-energy-infrastructure-apprenticeship-incentive-fund/">Jobs for the Future</a> <span>Registered apprenticeships for AI infrastructure and related trades.</span></li></ul></div>
+            </details>
+          </div>
+        </div></article>
+        </section>
       </div>
     </section>
 
     <section class="section wrap" id="why">
 
       <h2>What we want to explore together.</h2>
-      <p class="lede">Our proposed community pilots would pool compute so a neighborhood can run its own private AI. We want to test whether this can use less water, energy and other resources, store and reuse information the community needs, and use the cloud only when needed.</p>
+      <p class="lede">Pool compute so a neighborhood can run its own private AI. Through shared hardware, open-source tools and practical training, we want to explore how close local systems can come to leading frontier models on selected reasoning tasks. Our proposed pilots would measure answer quality, cost and resource use, store and reuse information the community needs, and use the cloud when it is needed.</p>
       <div class="three steps">
         <article><h3>Start close to home.</h3><p>Use smaller models for everyday work, like editing a letter or organizing notes. Pool the hardware so access doesn’t depend on buying a powerful machine.</p></article>
         <article><h3>Reuse good work.</h3><p>When neighbors ask the same public question, keep a checked answer and its source nearby. Refresh it when the facts change. Keep personal requests separate.</p></article>
